@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-
+#include <string>
 using namespace std;
 
 #define ALPHABET 52
@@ -33,11 +33,15 @@ int value(string rucksack) {
 int main() {
     ifstream input ("input.txt");
     int ans = 0;
-    string line;
+    stringstream line("");
+    string split;
     while(input >> line) 
-        ans += value(line);
+        while(getline(line,split,','))
+            cout<< split << "dsa ";
+        cout << endl;
+      //  ans += value(line);
     
-    cout << ans << endl;
+   // cout << ans << endl;
     
     return 0;
 }   
